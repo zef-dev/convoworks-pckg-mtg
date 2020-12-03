@@ -1,0 +1,9 @@
+{
+    "namespace": "mtg",
+    "author": "ZEF Development",
+    "email": "marko@zefdev.com",
+    "source_for": [
+        "functions", "entities"
+    ],
+    "description": "Contains contexts and functions for parsing and handling Magic: The Gathering cards"
+}
