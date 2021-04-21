@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.5 - 2021-03-27
+
+* use `convoworks-core` v0.21
+
 ## 1.0.4 - 2021-02-22
 
 * use convoworks-core v0.20
