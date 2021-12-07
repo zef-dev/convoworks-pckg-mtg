@@ -85,6 +85,16 @@ class MtgPackageDefinition extends AbstractPackageDefinition
 				'Card Name Catalog',
 				'Use a catalog entity for card names (currently only available on Amazon Alexa)',
 				[
+					'properties' => [
+						'version' => [
+							'editor_type' => 'text',
+							'editor_properties' => [],
+							'name' => 'Version',
+							'defaultValue' => '',
+							'description' => 'Catalog version for propagating new values.',
+							'valueType' => 'string'
+						]
+					],
 					'_preview_angular' => array(
 						'type' => 'html',
 						'template' => '<div class="code">' .
