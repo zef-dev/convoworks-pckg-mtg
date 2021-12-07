@@ -2,7 +2,11 @@
 
 namespace Convo\Pckg\Mtg\Catalogs;
 
-class CardNameContext implements \Convo\Core\Workflow\IServiceContext
+use Convo\Core\Workflow\AbstractWorkflowComponent;
+use Convo\Core\Workflow\ICatalogSource;
+use Convo\Core\Workflow\IServiceContext;
+
+class CardNameContext extends AbstractWorkflowComponent implements IServiceContext, ICatalogSource
 {
     /**
      * @var \Psr\Log\LoggerInterface
@@ -21,13 +25,20 @@ class CardNameContext implements \Convo\Core\Workflow\IServiceContext
      */
     private $_catalog;
 
-    public function __construct($catalogName, $logger, $httpFactory)
+    public function __construct($properties, $catalogName, $httpFactory)
     {
+        parent::__construct($properties);
+
+        $this->_version = $properties['version'];
+
         $this->_componentId = $catalogName;
 
-        $this->_logger = $logger;
-
         $this->_httpFactory = $httpFactory;
+    }
+
+    public function getCatalogVersion()
+    {
+        return $this->_catalog->getCatalogVersion();
     }
 
     public function getId()

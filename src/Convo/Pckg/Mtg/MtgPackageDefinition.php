@@ -106,8 +106,8 @@ class MtgPackageDefinition extends AbstractPackageDefinition
 						public function createComponent($properties, $service)
 						{
 							return new CardNameContext(
+								$properties,
 								'CardNameCatalog',
-								$this->_logger,
 								$this->_httpFactory
 							);
 						}

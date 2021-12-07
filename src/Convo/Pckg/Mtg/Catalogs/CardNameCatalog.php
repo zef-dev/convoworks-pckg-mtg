@@ -5,10 +5,8 @@ namespace Convo\Pckg\Mtg\Catalogs;
 use Convo\Core\Util\IHttpFactory;
 use Convo\Core\Util\StrUtil;
 
-class CardNameCatalog implements \Convo\Core\Workflow\ICatalogSource
+class CardNameCatalog implements \Convo\Core\Workflow\IServiceCatalog
 {
-    const CATALOG_VERSION = "2";
-
     const SYNONYM_MAP = [
         'Syr' => 'Sir',
         'Ardenvale' => 'Arden Vale',
@@ -31,11 +29,6 @@ class CardNameCatalog implements \Convo\Core\Workflow\ICatalogSource
     {
         $this->_logger = $logger;
         $this->_httpFactory = $httpFactory;
-    }
-
-    public function getCatalogVersion()
-    {
-        return self::CATALOG_VERSION;
     }
 
     public function getCatalogValues($platform)
